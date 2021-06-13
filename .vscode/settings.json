@@ -18,5 +18,5 @@
     "peacock.color": "#97706a",
     "staticWebApps.appSubpath": "/",
     "staticWebApps.apiSubpath": "api",
-    "staticWebApps.outputSubpath": "build:mfe1"
+    "staticWebApps.outputSubpath": "dist/shell"
 }
