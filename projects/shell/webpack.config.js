@@ -1,6 +1,7 @@
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 const mf = require("@angular-architects/module-federation/webpack");
 const path = require("path");
+const DashboardPlugin = require("@module-federation/dashboard-plugin");
 
 const sharedMappings = new mf.SharedMappings();
 sharedMappings.register(
@@ -40,7 +41,9 @@ module.exports = {
       }
 
     }),
+
     // Uncomment for sharing lib of an Angular CLI or Nx workspace
-    sharedMappings.getPlugin(),
+    // sharedMappings.getPlugin(),
+
   ],
 };
