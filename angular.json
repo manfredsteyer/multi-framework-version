@@ -56,7 +56,16 @@
 								}
 							],
 							"extraWebpackConfig": "projects/mfe1/webpack.prod.config.js"
-						}
+						},
+						"development": {
+							"optimization": false,
+							"sourceMap": true,
+							"namedChunks": true,
+							"extractLicenses": false,
+							"vendorChunk": false,
+							"buildOptimizer": false,
+							"extraWebpackConfig": "projects/mfe1/webpack.config.js"
+						}						
 					}
 				},
 				"serve": {
@@ -67,12 +76,17 @@
 						"port": 3000
 					},
 					"configurations": {
+						"development": {
+							"browserTarget": "mfe1:build:development",
+							"extraWebpackConfig": "projects/mfe1/webpack.config.js"
+						},
+
 						"production": {
 							"browserTarget": "mfe1:build:production",
 							"extraWebpackConfig": "projects/mfe1/webpack.prod.config.js"
 						}
 					},
-					"defaultConfiguration": "production"
+					"defaultConfiguration": "development"
 				},
 				"extract-i18n": {
 					"builder": "@angular-devkit/build-angular:extract-i18n",
@@ -178,7 +192,16 @@
 								}
 							],
 							"extraWebpackConfig": "projects/shell/webpack.prod.config.js"
-						}
+						},
+						"development": {
+							"optimization": false,
+							"sourceMap": true,
+							"namedChunks": true,
+							"extractLicenses": false,
+							"vendorChunk": false,
+							"buildOptimizer": false,
+							"extraWebpackConfig": "projects/shell/webpack.prod.config.js"
+						}						
 					}
 				},
 				"serve": {
@@ -192,9 +215,14 @@
 						"production": {
 							"browserTarget": "shell:build:production",
 							"extraWebpackConfig": "projects/shell/webpack.prod.config.js"
+						},
+						"development": {
+							"browserTarget": "shell:build:development",
+							"extraWebpackConfig": "projects/shell/webpack.config.js"
 						}
+
 					},
-					"defaultConfiguration": "production"
+					"defaultConfiguration": "development"
 				},
 				"extract-i18n": {
 					"builder": "@angular-devkit/build-angular:extract-i18n",

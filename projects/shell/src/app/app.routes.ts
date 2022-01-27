@@ -2,8 +2,9 @@ import { loadRemoteModule } from '@angular-architects/module-federation';
 import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { startsWith, WebComponentWrapper, WebComponentWrapperOptions } from '@angular-architects/module-federation-tools';
+import { startsWith } from '@angular-architects/module-federation-tools';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { WebComponentWrapper, WebComponentWrapperOptions } from './utils/web-component-wrapper';
 
 let URL = 'http://localhost:3000/remoteEntry.js';
 
@@ -17,11 +18,22 @@ export const APP_ROUTES: Routes = [
     // Your route here:
 
     // Local usage
+    {
+      path: 'flights',
+      loadChildren: () => {
+        return loadRemoteModule({
+          remoteEntry: URL,
+          remoteName: 'mfe1',
+          exposedModule: './Module'
+        })
+        .then(m => m.FlightsModule) }
+    },
+
     // {
     //   path: 'flights',
     //   loadChildren: () => {
     //     return loadRemoteModule({
-    //       remoteEntry: URL,
+    //       remoteEntry: 'https://brave-glacier-0ffc18c10.azurestaticapps.net/remoteEntry.js',
     //       remoteName: 'mfe1',
     //       exposedModule: './Module'
     //     })
@@ -29,34 +41,33 @@ export const APP_ROUTES: Routes = [
     // },
 
     {
-      path: 'flights',
-      loadChildren: () => {
-        return loadRemoteModule({
-          remoteEntry: 'https://brave-glacier-0ffc18c10.azurestaticapps.net/remoteEntry.js',
-          remoteName: 'mfe1',
-          exposedModule: './Module'
-        })
-        .then(m => m.FlightsModule) }
-    },
-
-    
-
-    {
       path: 'react',
       component: WebComponentWrapper,
       data: {
-        remoteEntry: 'https://witty-wave-0a695f710.azurestaticapps.net/remoteEntry.js',
+        remoteEntry: 'http://localhost:4204/remoteEntry.js',
         remoteName: 'react',
         exposedModule: './web-components',
         elementName: 'react-element'
       } as WebComponentWrapperOptions
     },   
+
+    // {
+    //   path: 'react',
+    //   component: WebComponentWrapper,
+    //   data: {
+    //     remoteEntry: 'https://witty-wave-0a695f710.azurestaticapps.net/remoteEntry.js',
+    //     remoteName: 'react',
+    //     exposedModule: './web-components',
+    //     elementName: 'react-element'
+    //   } as WebComponentWrapperOptions
+    // },   
     
     {
       path: 'angular1',
       component: WebComponentWrapper,
       data: {
-        remoteEntry: 'https://nice-grass-018f7d910.azurestaticapps.net/remoteEntry.js',
+        //remoteEntry: 'https://nice-grass-018f7d910.azurestaticapps.net/remoteEntry.js',
+        remoteEntry: 'http://localhost:4202/remoteEntry.js',
         remoteName: 'angular1',
         exposedModule: './web-components',
         elementName: 'angular1-element'
