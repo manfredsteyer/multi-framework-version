@@ -13,7 +13,8 @@ export class AppComponent {
   ngVersion = require('../../../../package.json').dependencies['@angular/core'];
 
   constructor(private service: AuthLibService, private ngZone: NgZone) {
-    shareNgZone(ngZone);
+    // Not necessary anymore, when calling the bootstrap helper with appType: 'shell':
+    // shareNgZone(ngZone);
     this.service.login('Max', null);
   }
 
