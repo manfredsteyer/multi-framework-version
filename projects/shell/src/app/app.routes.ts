@@ -17,27 +17,27 @@ export const APP_ROUTES: Routes = [
     // Your route here:
 
     // Local usage
+    // {
+    //   path: 'flights',
+    //   loadChildren: () => {
+    //     return loadRemoteModule({
+    //       type: 'module',
+    //       remoteEntry: URL,
+    //       exposedModule: './Module'
+    //     })
+    //     .then(m => m.FlightsModule) }
+    // },
+
     {
       path: 'flights',
       loadChildren: () => {
         return loadRemoteModule({
           type: 'module',
-          remoteEntry: URL,
+          remoteEntry: 'https://brave-glacier-0ffc18c10.azurestaticapps.net/remoteEntry.js',
           exposedModule: './Module'
         })
         .then(m => m.FlightsModule) }
     },
-
-    // {
-    //   path: 'flights',
-    //   loadChildren: () => {
-    //     return loadRemoteModule({
-    //       remoteEntry: 'https://brave-glacier-0ffc18c10.azurestaticapps.net/remoteEntry.js',
-    //       remoteName: 'mfe1',
-    //       exposedModule: './Module'
-    //     })
-    //     .then(m => m.FlightsModule) }
-    // },
 
     {
       path: 'react',
