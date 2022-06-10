@@ -64,6 +64,7 @@
 					"options": {
 						"browserTarget": "mfe1:build",
 						"extraWebpackConfig": "projects/mfe1/webpack.config.js",
+						"publicHost": "http://localhost:3000",
 						"port": 3000
 					},
 					"configurations": {
@@ -184,9 +185,10 @@
 				"serve": {
 					"builder": "ngx-build-plus:dev-server",
 					"options": {
+						"publicHost": "http://localhost:4200",
 						"browserTarget": "shell:build",
 						"extraWebpackConfig": "projects/shell/webpack.config.js",
-						"port": 5000
+						"port": 4200
 					},
 					"configurations": {
 						"production": {

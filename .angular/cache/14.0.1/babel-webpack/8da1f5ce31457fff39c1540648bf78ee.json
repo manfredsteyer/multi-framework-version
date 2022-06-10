@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { AppModule } from './app/app.module';\nimport { environment } from './environments/environment';\nimport { bootstrap } from '@angular-architects/module-federation-tools';\nbootstrap(AppModule, {\n  production: environment.production,\n  appType: 'shell'\n});","map":null,"metadata":{},"sourceType":"module"}

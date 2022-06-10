@@ -1,0 +1,1 @@
+{"ast":null,"code":"/*\r\n * Public API Surface of shared-lib\r\n */\nexport * from './lib/shared-lib.service';\nexport * from './lib/shared-lib.component';\nexport * from './lib/shared-lib.module';\nexport * from './lib/other/other.component';","map":null,"metadata":{},"sourceType":"module"}

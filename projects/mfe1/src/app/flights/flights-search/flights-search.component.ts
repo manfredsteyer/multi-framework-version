@@ -12,7 +12,6 @@ export class FlightsSearchComponent {
   user = '';
  
   constructor(http: HttpClient, auth: AuthLibService) {
-    console.debug('http', http);
     this.user = auth.user;
   }
 

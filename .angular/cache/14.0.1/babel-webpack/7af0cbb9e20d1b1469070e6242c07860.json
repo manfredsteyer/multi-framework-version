@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { FlightsSearchComponent } from './flights-search/flights-search.component';\nexport const FLIGHTS_ROUTES = [{\n  path: 'flights-search',\n  component: FlightsSearchComponent\n}];","map":null,"metadata":{},"sourceType":"module"}

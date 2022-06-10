@@ -1,6 +1,5 @@
 import { Component, NgZone } from '@angular/core';
 import { AuthLibService } from 'auth-lib';
-import { shareNgZone } from '@angular-architects/module-federation-tools';
 
 declare const require: any;
 
