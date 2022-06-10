@@ -27,7 +27,6 @@ export const APP_ROUTES: Routes = [
     //     })
     //     .then(m => m.FlightsModule) }
     // },
-
     {
       path: 'flights',
       loadChildren: () => {
